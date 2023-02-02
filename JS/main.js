@@ -1,31 +1,29 @@
-let producto = ""
-let nombreProducto= "Anillo LOTR plata"
-let seguirComprando = false
-let cantidad = 0
-let precio = 0
-let precioFinal= 0
+//                   Bienvenida al asistente de compra
 
-alert("Desea comprar este producto "+nombreProducto )
+
+let bienvenida = prompt("Bienvenido a nuestro asistente de compra , por favor ingrese su nombre")
+
+if (bienvenida== "") {
+    alert("No pudimos registrar el nombre ingresado, por favor, vuelva a ingresar su nombre")
+}else { 
+    alert("Hola " + bienvenida + " esperamos ayudarle a registrar su compra , aqui podra ver el monto total de su compra y la forma de pago")
+}
+//                      Unidades a comprar
 do {
-    cantidad = parseInt(prompt("Ingrese la cantidad que desea comprar (limite : 10 unidades)" ,"Ej: 3"))    
+    let cantidad = prompt("Por Favor ingrese la cantidad de unidades que desea comprar (limite de compra 10 unidades)","Ej:3")
 
-    producto= prompt("Como desea abonar su compra?" , "Ej: Credito (recargo 10%) o Debito")
-    switch (producto) {
-        case "Debito":
-            precio= 300
-            break
-        case "Credito":
-            precio=350
-            break
-        default:
-            alert("Elija una opcion valida para abonar su compra")
-            precio = 0
-            cantidad = 0
-            break;
-    }
-    precioFinal+= cantidad*precio
-    alert("El valor total de la compra seria $"+precioFinal )
-    seguirComprando= confirm("Desea Seguir comprando")
-} while (seguirComprando);
+if (cantidad<10) {
+    alert("Ha ingresado " + cantidad + " unidad/unidades")
+}else { 
+    alert("Por favor ingrese un numero menor que el limite de unidades")
+    cantidad = 0
+    break;
+}
+} while (confirm("¿Desea reingresarlo?"));
+//                           Forma de pago
 
-alert("La compra del producto se ha realizado con Exito!")
+
+
+
+
+
