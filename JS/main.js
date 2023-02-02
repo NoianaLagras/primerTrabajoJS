@@ -59,7 +59,7 @@ const calculoDeEnvios = (subtotal) => {
     const envios = confirm ("Desea agregar tambien el envio a domicilio?")
     if (envios && subtotal >= 2000) {
         alert ("Felicitaciones! tenes envio a domicilio gratis , el valor total de tu compra es $" + subtotal)
-    } else if (envios && subtotal <= 2000){
+    } else if (envios && subtotal < 2000){
         subtotal += 1500
         alert("El total de su compra mas el costo de envio es de "+1500)
     } else {
