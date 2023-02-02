@@ -13,7 +13,7 @@ function tipoDePago (elegirPago,debito,credito){
         
         case "2":
         
-            return alert(("Los pagos con tarjeta de credito tienen un recargo del 10%, el valor subtotal de su compra seria de $")+(credito*1.10))
+            return alert(("Los pagos con tarjeta de credito tienen un recargo del 10%, el valor subtotal de su compra seria de $")+(credito*1,10))
         
         default: alert("No pudimos procesar tu operacion")
     }
@@ -58,11 +58,16 @@ pagar= tipoDePago (pagar,subtotal,subtotal)
 const calculoDeEnvios = (subtotal) => {
     const envios = confirm ("Desea agregar tambien el envio a domicilio?")
     if (envios && subtotal >= 2000 ) {
+
         alert ("Felicitaciones! tenes envio a domicilio gratis , el valor total de tu compra es $" + subtotal)
-    } else if (envios && subtotal < 2000) {
+    
+    }  else if (envios && subtotal < 2000) {
+
         subtotal += 1000
         alert("El total de su compra mas el costo de envio es de "+ subtotal)
+
     } else {
+        
         alert("El total de su compra es de "+ subtotal)
     }
     return subtotal
