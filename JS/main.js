@@ -2,22 +2,20 @@
 let seguirComprando = false
 let pagar =""
 let cantidad = 0
-let precioFinal =0
+let subtotal =0
 //                           Forma de pago
 function tipoDePago (elegirPago,debito,credito){
     switch (elegirPago) {
         case "1":
-            
-            return  alert("El valor de su compra seria $" + debito)
-            
-          
+        
+            return  alert("El valor subtotal de su compra seria $" + debito)
+        
+        
         case "2":
-            
-            return alert(("Los pagos con tarjeta de credito tienen un recargo del 10%, el valor de su compra seria de $")+(credito*1.10))
+        
+            return alert(("Los pagos con tarjeta de credito tienen un recargo del 10%, el valor subtotal de su compra seria de $")+(credito*1.10))
         
         default: alert("No pudimos procesar tu operacion")
-        
-        
     }
 
 }
@@ -49,13 +47,30 @@ do{
 //forma de pago
 let precioProducto = 300
 
-precioFinal+= cantidad*precioProducto
+subtotal+= cantidad*precioProducto
 
 
 pagar= prompt ("Ingresa su forma de pago \n 1 Para pagar con tarjeta de debito \n 2 Para pagar con tarjeta de credito")
-pagar= tipoDePago (pagar,precioFinal,precioFinal)
+pagar= tipoDePago (pagar,subtotal,subtotal)
+
+
+//                          Envios
+const calculoDeEnvios = (subtotal) => {
+    const envios = confirm ("Desea agregar tambien el envio a domicilio?")
+    if (envios && subtotal >= 2000) {
+        alert ("Felicitaciones! tenes envio a domicilio gratis , el valor total de tu compra es $" + subtotal)
+    } else if (envios && subtotal <= 2000){
+        subtotal += 1500
+        alert("El total de su compra mas el costo de envio es de "+1500)
+    } else {
+        alert("El total de su compra es de "+ subtotal)
+    }
+    return subtotal
+};
+ const totalConEnvio = calculoDeEnvios(subtotal)
+
 confirm("Desea realizar esta compra?" )
 
 seguirComprando= confirm("Desea Seguir comprando?")
 } while (seguirComprando);
- alert("Muchas gracias por visitar nuestra pagina!")
+ alert("Muchas gracias " +bienvenida+ " por visitar nuestra pagina!")
