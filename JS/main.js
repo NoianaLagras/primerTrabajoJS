@@ -21,16 +21,16 @@ function tipoDePago (elegirPago,debito,credito){
 }
 //                   Bienvenida al asistente de compras
 
-
+do{
 let bienvenida = prompt("Bienvenido a nuestro asistente de compra , por favor ingrese su nombre")
 
 if (bienvenida== "") {
     alert("No pudimos registrar el nombre ingresado, por favor, intentelo de nuevo")
 }else {
-    alert("Hola " + bienvenida + " esperamos ayudarle a registrar su compra , aqui podra ver el monto total de su carrito , la forma de pago y el precio del envio")
+    alert("Hola " + bienvenida + "! esperamos ayudarle a registrar su compra , aqui podra ver el monto total de su carrito , la forma de pago y el precio del envio")
 }
 //                      Unidades a comprar
-do{
+
     do {
         cantidad = parseInt(prompt("Por Favor ingrese la cantidad de unidades que desea comprar (limite de compra 10 unidades)","Ej:3"))
 
@@ -40,11 +40,11 @@ do{
         alert("Por favor ingrese un numero menor que el limite de unidades")
         cantidad = 0
         }
-    } while (confirm("¿Desea reingresarlo?"))
+    } while (confirm("¿Desea reingresar el numero de unidades?"))
   
 
 
-//forma de pago
+//           forma de pago
 let precioProducto = 300
 
 subtotal+= cantidad*precioProducto
