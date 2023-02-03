@@ -2,7 +2,7 @@
 let seguirComprando = false
 let pagar =""
 let cantidad = 0
-let subtotal =0
+let subtotal = parseInt(0)
 //                           Forma de pago
 function tipoDePago (elegirPago,debito,credito){
     switch (elegirPago) {
@@ -13,26 +13,26 @@ function tipoDePago (elegirPago,debito,credito){
         
         case "2":
         
-            return alert(("Los pagos con tarjeta de credito tienen un recargo del 10%, el valor subtotal de su compra seria de $")+(credito*1,10))
+            return alert(("Los pagos con tarjeta de credito tienen un recargo del 10%, el valor subtotal de su compra seria de $")+(credito*1.10))
         
         default: alert("No pudimos procesar tu operacion")
     }
 
 }
-//                   Bienvenida al asistente de compra
+//                   Bienvenida al asistente de compras
 
 
 let bienvenida = prompt("Bienvenido a nuestro asistente de compra , por favor ingrese su nombre")
 
 if (bienvenida== "") {
     alert("No pudimos registrar el nombre ingresado, por favor, intentelo de nuevo")
-}else { 
-    alert("Hola " + bienvenida + " esperamos ayudarle a registrar su compra , aqui podra ver el monto total de su carrito y la forma de pago")
+}else {
+    alert("Hola " + bienvenida + " esperamos ayudarle a registrar su compra , aqui podra ver el monto total de su carrito , la forma de pago y el precio del envio")
 }
 //                      Unidades a comprar
 do{
     do {
-        cantidad = prompt("Por Favor ingrese la cantidad de unidades que desea comprar (limite de compra 10 unidades)","Ej:3")
+        cantidad = parseInt(prompt("Por Favor ingrese la cantidad de unidades que desea comprar (limite de compra 10 unidades)","Ej:3"))
 
     if (cantidad < 10 ) {
     alert("Ha ingresado " + cantidad + " de unidad/unidades")
@@ -57,18 +57,18 @@ pagar= tipoDePago (pagar,subtotal,subtotal)
 //                          Envios
 const calculoDeEnvios = (subtotal) => {
     const envios = confirm ("Desea agregar tambien el envio a domicilio?")
-    if (envios && subtotal >= 2000 ) {
+    if (envios && subtotal >= 3000 ) {
 
-        alert ("Felicitaciones! tenes envio a domicilio gratis , el valor total de tu compra es $" + subtotal)
+        alert ("Felicitaciones! tenes envio a domicilio gratis , el valor total de tu compra es $"+ subtotal)
     
-    }  else if (envios && subtotal < 2000) {
+    }  else if (envios && subtotal < 3000) {
 
         subtotal += 1000
-        alert("El total de su compra mas el costo de envio es de "+ subtotal)
+        alert("El total de su compra mas el costo de envio es de $"+ subtotal)
 
     } else {
         
-        alert("El total de su compra es de "+ subtotal)
+        alert("El total de su compra es de $"+ subtotal)
     }
     return subtotal
 };
@@ -78,4 +78,5 @@ confirm("Desea realizar esta compra?" )
 
 seguirComprando= confirm("Desea Seguir comprando?")
 } while (seguirComprando);
- alert("Muchas gracias " +bienvenida+ " por visitar nuestra pagina!")
+
+alert("Muchas gracias " +bienvenida+ " por visitar nuestra pagina!")
