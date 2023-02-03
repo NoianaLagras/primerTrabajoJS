@@ -75,7 +75,7 @@ const calculoDeEnvios = (subtotal) => {
  const totalConEnvio = calculoDeEnvios(subtotal)
 
 confirm("Desea realizar esta compra?" )
+alert("Muchas gracias!  " +bienvenida+ " por visitar nuestra pagina!")
 
 seguirComprando= confirm("Desea Seguir comprando?")
-alert("Muchas gracias!  " +bienvenida+ " por visitar nuestra pagina!")
-} while (seguirComprando)
+} while (seguirComprando);
